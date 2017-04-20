@@ -1,19 +1,20 @@
-This is the client-side part of geoSocket.
+This is the client-side part of geosocket.
 
-With this little piece of code : 
+With this little piece of code :
 ```html
+
   <script src="/socket.io/socket.io.js"></script>
-  <script src="/javascripts/libraries/geosocket-0.0.1/GEOSOCKET.js"></script>
-  
+  <script src="/bower_components/geosocket/src/client-side/GEOSOCKET.js"></script>
+
   <script type="text/javascript">
     var config = {
-      local : { 
+      local : {
         user : {
           username : "test"
         }
       }
     }
-    
+
     var sock = GEOSOCKET;
     sock.init({
       username: config.local.user.username
@@ -35,7 +36,7 @@ With this little piece of code :
     })
   </script>
 ```
-You should get something like this: 
+You should get something like this:
 ```
 My quick location is Geoposition {coords: Coordinates, timestamp: 1492673971716}
 This is my position Geoposition {coords: Coordinates, timestamp: 1492673971716}

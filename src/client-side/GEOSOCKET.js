@@ -3,7 +3,12 @@ var GEOSOCKET = (function(geosocket) {
 
 		geosocket._socket = null;
 		geosocket._me = {
-			_position : null,
+			_position : {
+					coords : {
+						latitude : null,
+						longitude : null
+					}
+				},
 			_username : null
 		};
 		geosocket._idNavigationWatch = null;
@@ -16,20 +21,20 @@ var GEOSOCKET = (function(geosocket) {
 			_this._me._username =  options.username || _this._me._username;
 			_this._socket = io('//'+document.location.hostname+':'+document.location.port);
 			_this._eventListener();
-			_this._watchPosition();
+			_this._getCurrentPosition();
 		};
 
 
 		geosocket._eventListener = function(){
 			_this._onNewClient();
-			_this._onClientLeft();
 			_this._onCoordonneesBroadcast();
+			_this._onClientLeft();
 		}
 
 
 		geosocket._watchPosition = function(callback){
 			callback = callback || function(){};
-			
+
 			// Recuperation des coordonnees
 			_this._idNavigationWatch = navigator.geolocation.watchPosition(function(position) {
 				// Mise a jour des variables
@@ -57,21 +62,38 @@ var GEOSOCKET = (function(geosocket) {
 		}
 
 
+		geosocket._getCurrentPosition = function(callback){
+			callback = callback || function(){};
+
+			navigator.geolocation.getCurrentPosition(function(position){
+				_this._watchPosition();
+				callback(position);
+			},function(err) {console.warn('ERROR(' + err.code + '): ' + err.message);},{
+				maximumAge:600000
+			});
+		}
+
+		geosocket.onGetCurrentPosition = function(callback){
+			_this._getCurrentPosition(callback);
+		}
+
+
 		// Un nouveau client vient de se connecter au serveur
 		geosocket._onNewClient = function(callback){
 			callback = callback || function(){};
 
 			_this._socket.on('new_client', function(data) {
+
 				// On se presente a ce client en lui envoyant notre position
 				_this._socket.emit('present_to_new_client', {
-					socketid : data.socketid, 
+					socketid : data.socketid,
 					pos : JSON.stringify({
 						latitude : _this._me._position.coords.latitude,
 						longitude : _this._me._position.coords.longitude
 					}),
 					name: _this._me._username
 				});
-				
+
 				callback(data);
 			});
 		}

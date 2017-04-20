@@ -22,6 +22,8 @@ var GEOSOCKET = (function(geosocket) {
 
 		geosocket._eventListener = function(){
 			_this._onNewClient();
+			_this._onClientLeft();
+			_this._onCoordonneesBroadcast();
 		}
 
 

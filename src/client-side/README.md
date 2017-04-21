@@ -1,9 +1,14 @@
 This is the client-side part of geosocket.
 
-With this little piece of code :
+Install the geosocket package with bower : 
+```sh
+bower install --save geosocket
+```
+
+Then used it with this little piece of code :
 ```html
 
-  <script src="/socket.io/socket.io.js"></script>
+  <script src="/bower_components/socket.io-client/dist/socket.io.min.js"></script>
   <script src="/bower_components/geosocket/src/client-side/GEOSOCKET.js"></script>
 
   <script type="text/javascript">

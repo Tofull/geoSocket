@@ -1,6 +1,5 @@
 {
   "name": "geosocket",
-  "version": "0.0.2",
   "description": "Javascript plugin for real time position sharing - compatible with Leaflet, Google Maps and others",
   "main": "src/server-side/index.js",
   "scripts": {

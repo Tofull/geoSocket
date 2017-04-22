@@ -1,6 +1,6 @@
 This is the client-side part of geosocket.
 
-Install the geosocket package with bower : 
+Install the geosocket package (client-side) with bower :
 ```sh
 bower install --save geosocket
 ```

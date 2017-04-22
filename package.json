@@ -26,5 +26,6 @@
   "homepage": "https://github.com/Tofull/geoSocket#readme",
   "dependencies": {
     "socket.io": "^1.7.3"
-  }
+  },
+  "version": "0.0.2"
 }

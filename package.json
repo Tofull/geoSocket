@@ -1,0 +1,31 @@
+{
+  "name": "geosocket",
+  "version": "0.0.2",
+  "description": "Javascript plugin for real time position sharing - compatible with Leaflet, Google Maps and others",
+  "main": "src/server-side/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tofull/geoSocket.git"
+  },
+  "keywords": [
+    "realtime",
+    "socket",
+    "websocket",
+    "location",
+    "geolocation",
+    "map",
+    "leaflet"
+  ],
+  "author": "Tofull <loic.messal@orange.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tofull/geoSocket/issues"
+  },
+  "homepage": "https://github.com/Tofull/geoSocket#readme",
+  "dependencies": {
+    "socket.io": "^1.7.3"
+  }
+}

@@ -28,7 +28,7 @@
   "dependencies": {
     "socket.io": "^1.7.3"
   },
-  "version": "0.0.3",
+  "version": "0.0.4",
   "devDependencies": {
     "chai": "^3.5.0",
     "expect.js": "^0.3.1",

@@ -3,6 +3,8 @@ Javascript plugin for real time position sharing - compatible with Leaflet, Goog
 
 
 ## Server-side
+[![NPM](https://nodei.co/npm/geosocket.png?downloads=true)](https://nodei.co/npm/geosocket/)
+[![npm version](https://badge.fury.io/js/geosocket.svg)](https://badge.fury.io/js/geosocket)
 
 Install the geosocket package (server-side) with npm :
 ```sh
@@ -32,6 +34,9 @@ geosocket(server);
 
 
 ## Client-Side
+[![Bower version](https://badge.fury.io/bo/geosocket.svg)](https://badge.fury.io/bo/geosocket)
+
+
 > The server-side is required to connect the sockets
 
 Install the geosocket package (client-side) with bower :

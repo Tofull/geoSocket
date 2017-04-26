@@ -3,7 +3,8 @@
   "description": "Javascript plugin for real time position sharing - compatible with Leaflet, Google Maps and others",
   "main": "src/server-side/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/**/*.js",
+    "coverage": "nyc --reporter=html --reporter=text npm test"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,12 @@
   "dependencies": {
     "socket.io": "^1.7.3"
   },
-  "version": "0.0.3"
+  "version": "0.0.3",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^3.3.0",
+    "nyc": "^10.2.0",
+    "sinon": "^2.1.0"
+  }
 }
